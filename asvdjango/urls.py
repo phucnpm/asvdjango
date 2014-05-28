@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^polls/', include('polls.urls', namespace="polls")) # namespace is used to separate urls' name in polls.urls
 )
