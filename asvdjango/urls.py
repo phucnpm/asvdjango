@@ -9,4 +9,9 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^dojango/', include('apps.dojango.urls')),
+    url(r'^demo/', include('demo.urls')),
+
+    # url(r'^$', 'apps.dojango.views.test'),
+    url(r'^$', 'demo.views.mydojo'),
 )

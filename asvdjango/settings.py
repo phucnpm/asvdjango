@@ -10,8 +10,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+# Add apps folder to PYTHONPATH
+sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -38,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'polls',
+    'apps.dojango',
+    'demo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,3 +87,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# DOJANGO CONFIG
+# DOJANGO_DOJO_PROFILE = 'local'
+# This version setting is optional! Currently 1.3.1 is the default for that.
+# Just showing, how to enable your own dojo source version
+DOJANGO_DOJO_BUILD_VERSION = '1.8.3'
+DOJANGO_DOJO_PROFILE = "local_release"
+DOJANGO_DOJO_VERSION = "1.8.3-dojango-with-dojo"
